@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+    ddagent:
+        ports:
+            - "8126:8126"
+        environment:
+            DD_API_KEY: "<dd-api-key>"
+            DD_SITE: "datadoghq.com"
+            DD_APM_NON_LOCAL_TRAFFIC: true
+            DD_APM_ENABLED: true
+        volumes:
+            # - "/var/run/docker.sock:/var/run/docker.sock:ro"
+            - "/proc/:/host/proc/:ro"
+            - "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro"
+        image: datadog/agent:latest
+        networks:
+            local: {}
+
+    python-app:
+        ports:
+            - "8181:8181"
+        environment:
+            DD_SERVICE: "python-instrumented-poc"
+            DD_ENV: "alpha"
+            DD_AGENT_HOST: "ddagent"
+            DD_TRACE_AGENT_PORT: "8126"
+            DD_LOGS_INJECTION: true
+            PORT: "8181"
+        build:
+            context: src/
+        depends_on: 
+            - ddagent
+        networks:
+            local: {}
+
+networks:
+    local:
+        name: local

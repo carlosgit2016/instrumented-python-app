@@ -1,0 +1,33 @@
+schema-version: v2
+dd-service: python-instrumented-poc
+team: End to enders
+contacts:
+  - name: Support Email
+    type: email
+    contact: end2enders-team-aaaahqyhiqr6lcsmryjo4yy7jy@trimble.org.slack.com
+  - name: Support Slack
+    type: slack
+    contact: end2enders-team
+repos:
+  - name: Python instrumented POC
+    provider: github
+    url: http://github/shopping-cart
+docs:
+  - name: shopping-cart architecture
+    provider: gdoc
+    url: https://google.drive/shopping-cart-architecture
+  - name: shopping-cart service Wiki
+    provider: wiki
+    url: https://wiki/shopping-cart
+links:
+  - name: shopping-cart runbook
+    type: runbook
+    url: https://runbook/shopping-cart
+tags:
+  - product:ttm-compliance
+  - env:alpha
+integrations:
+  pagerduty: https://www.pagerduty.com/service-directory/Pshopping-cart
+extensions:
+  datadoghq.com/shopping-cart:
+    customField: customValue
