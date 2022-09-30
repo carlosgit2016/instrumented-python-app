@@ -7,27 +7,21 @@ contacts:
     contact: end2enders-team-aaaahqyhiqr6lcsmryjo4yy7jy@trimble.org.slack.com
   - name: Support Slack
     type: slack
-    contact: end2enders-team
+    contact: https://peoplenet.slack.com/archives/C044055C45T
 repos:
   - name: Python instrumented POC
-    provider: github
-    url: http://github/shopping-cart
+    provider: bitbucket server
+    url: https://bitbucket.trimble.tools/projects/PNET-PLATFORM/repos/e2e-instrumented-app-poc/browse
 docs:
-  - name: shopping-cart architecture
-    provider: gdoc
-    url: https://google.drive/shopping-cart-architecture
-  - name: shopping-cart service Wiki
+  - name: Instrumented POC docs
     provider: wiki
-    url: https://wiki/shopping-cart
+    url: https://bitbucket.trimble.tools/projects/PNET-PLATFORM/repos/e2e-instrumented-app-poc/browse/README.md
 links:
-  - name: shopping-cart runbook
+  - name: instrumented poc runbook
     type: runbook
-    url: https://runbook/shopping-cart
+    url: https://bitbucket.trimble.tools/projects/PNET-PLATFORM/repos/e2e-instrumented-app-poc/browse/README.md
 tags:
   - product:ttm-compliance
-  - env:alpha
+  - team:endtoenders
 integrations:
   pagerduty: https://www.pagerduty.com/service-directory/Pshopping-cart
-extensions:
-  datadoghq.com/shopping-cart:
-    customField: customValue
